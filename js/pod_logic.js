@@ -251,20 +251,4 @@ if (localStorage.getItem("theme") === "dark") {
     themeButton.textContent = "Light Mode";
 }
 
-themeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    const dark = document.body.classList.contains("dark-mode");
-
-    if (dark) {
-        localStorage.setItem("theme", "dark");
-        themeButton.textContent = "Light Mode";
-    } else {
-        localStorage.setItem("theme", "light");
-        themeButton.textContent = "Dark Mode";
-    }
-
-});
-
 loadData();

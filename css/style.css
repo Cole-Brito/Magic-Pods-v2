@@ -1,17 +1,4 @@
 :root {
-    --bg-color: #f4f4f4;
-    --card-color: #ffffff;
-    --text-color: #333333;
-    --border-color: #cccccc;
-
-    --button-color: #333333;
-    --button-hover: #555555;
-
-    --danger-color: #c0392b;
-    --danger-hover: #e74c3c;
-}
-
-body.dark-mode {
     --bg-color: #181818;
     --card-color: #2b2b2b;
     --text-color: #eeeeee;
@@ -26,7 +13,7 @@ body.dark-mode {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg-color);
+    background-color: #181818;
     color: var(--text-color);
 
     margin: 0;
