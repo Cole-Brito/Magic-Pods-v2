@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Pods</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1><strong>Magic Pods</strong></h1> 
+    </header>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter username" required>
+    <button id="submitBtn" type="button">Submit Username</button>
+
+    <button id="shuffleBtn" type="button">Shuffle Pods</button>
+
+    <h2>Players</h2>
+    <ul id="playerList"></ul>
+
+    <h2>Pods</h2>
+    <div id="podDisplay"></div>
+
+    <button id="resetBtn">Reset Data</button>
+
+    <script src="js/pod_logic.js"></script>
+</body>
+</html>

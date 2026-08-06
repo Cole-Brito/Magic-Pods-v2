@@ -1,0 +1,116 @@
+/* General page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #222;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+
+/* Inputs and buttons */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+
+
+button:hover {
+    background-color: #555;
+}
+
+
+/* Player list */
+#playerList {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+}
+
+
+#playerList li {
+    background-color: white;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Remove buttons */
+#playerList button {
+    background-color: #c0392b;
+    padding: 5px 10px;
+}
+
+
+#playerList button:hover {
+    background-color: #e74c3c;
+}
+
+
+/* Pods container */
+#podDisplay {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+/* Individual pod cards */
+#podDisplay div {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+
+#podDisplay h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+
+#podDisplay ul {
+    padding-left: 20px;
+}
+
+
+#podDisplay li {
+    margin: 5px 0;
+}
