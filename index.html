@@ -7,10 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="Settings">
+        <button id="themeBtn">Dark Mode</button>
+        <button id="resetBtn">Wipe Users</button>
+        <label for="podSize">Pod Size:</label>
 
-    <header>
-        <h1><strong>Magic Pods</strong></h1> 
-    </header>
+        <select id="podSize">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
 
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" placeholder="Enter username" required>
@@ -18,13 +26,13 @@
 
     <button id="shuffleBtn" type="button">Shuffle Pods</button>
 
+
     <h2>Players</h2>
     <ul id="playerList"></ul>
 
     <h2>Pods</h2>
     <div id="podDisplay"></div>
 
-    <button id="resetBtn">Reset Data</button>
 
     <script src="js/pod_logic.js"></script>
 </body>

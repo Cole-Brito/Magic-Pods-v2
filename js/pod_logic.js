@@ -1,4 +1,4 @@
-const POD_SIZE = 4;
+let podSize = 4;
 const players = [];
 const playHistory = {};
 
@@ -7,12 +7,19 @@ let playerCount = 0;
 function saveData() {
     localStorage.setItem("players", JSON.stringify(players));
     localStorage.setItem("playHistory", JSON.stringify(playHistory));
+    localStorage.setItem("podSize", podSize);
 }
 
 
 function loadData() {
     const savedPlayers = localStorage.getItem("players");
     const savedHistory = localStorage.getItem("playHistory");
+    const savedPodSize = localStorage.getItem("podSize");
+
+    if (savedPodSize) {
+        podSize = Number(savedPodSize);
+        document.getElementById("podSize").value = podSize;
+    }
 
     if (savedPlayers) {
         players.push(...JSON.parse(savedPlayers));
@@ -49,8 +56,8 @@ function shufflePods(inputPlayers = players) {
     }
 
     const groups = [];
-    for (let i = 0; i < shuffled.length; i += POD_SIZE) {
-        groups.push(shuffled.slice(i, i + POD_SIZE));
+    for (let i = 0; i < shuffled.length; i += podSize) {
+        groups.push(shuffled.slice(i, i + podSize));
     }
 
     let output = "Pods:\n";
@@ -226,6 +233,36 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 
         displayPlayers();
         displayPods([]);
+    }
+
+});
+
+const podSizeSelect = document.getElementById("podSize");
+
+podSizeSelect.addEventListener("change", () => {
+    podSize = Number(podSizeSelect.value);
+});
+
+const themeButton = document.getElementById("themeBtn");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeButton.textContent = "Light Mode";
+}
+
+themeButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    const dark = document.body.classList.contains("dark-mode");
+
+    if (dark) {
+        localStorage.setItem("theme", "dark");
+        themeButton.textContent = "Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        themeButton.textContent = "Dark Mode";
     }
 
 });

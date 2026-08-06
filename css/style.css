@@ -1,10 +1,39 @@
-/* General page styling */
+:root {
+    --bg-color: #f4f4f4;
+    --card-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+
+    --button-color: #333333;
+    --button-hover: #555555;
+
+    --danger-color: #c0392b;
+    --danger-hover: #e74c3c;
+}
+
+body.dark-mode {
+    --bg-color: #181818;
+    --card-color: #2b2b2b;
+    --text-color: #eeeeee;
+    --border-color: #555555;
+
+    --button-color: #4b4b4b;
+    --button-hover: #666666;
+
+    --danger-color: #b03a2e;
+    --danger-hover: #c0392b;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
     margin: 0;
     padding: 20px;
-    color: #333;
+
+    transition: background-color .25s ease,
+                color .25s ease;
 }
 
 
@@ -12,6 +41,10 @@ body {
 header {
     text-align: center;
     margin-bottom: 30px;
+}
+
+.Settings {
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -24,29 +57,34 @@ h2 {
 }
 
 
-/* Inputs and buttons */
 input {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+
+    background: var(--card-color);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
 
 button {
     padding: 10px 15px;
-    margin-left: 5px;
+
+    background: var(--button-color);
+    color: white;
+
     border: none;
     border-radius: 5px;
+
     cursor: pointer;
-    background-color: #333;
-    color: white;
-    font-size: 14px;
+
+    transition: background .2s ease;
 }
 
-
 button:hover {
-    background-color: #555;
+    background: var(--button-hover);
 }
 
 
@@ -59,26 +97,31 @@ button:hover {
 
 
 #playerList li {
-    background-color: white;
+
+    background: var(--card-color);
+
     margin: 8px 0;
     padding: 10px 15px;
+
     border-radius: 8px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+
+    transition: background-color .25s ease;
 }
 
 
 /* Remove buttons */
 #playerList button {
-    background-color: #c0392b;
-    padding: 5px 10px;
+    background: var(--danger-color);
 }
 
-
 #playerList button:hover {
-    background-color: #e74c3c;
+    background: var(--danger-hover);
 }
 
 
@@ -92,11 +135,15 @@ button:hover {
 
 /* Individual pod cards */
 #podDisplay div {
-    background-color: white;
+
+    background: var(--card-color);
+
     border-radius: 10px;
     padding: 15px;
 
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+
+    transition: background-color .25s ease;
 }
 
 
