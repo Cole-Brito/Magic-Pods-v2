@@ -256,10 +256,4 @@ podSizeSelect.addEventListener("change", () => {
 
 const themeButton = document.getElementById("themeBtn");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    themeButton.textContent = "Light Mode";
-}
-
 loadData();
