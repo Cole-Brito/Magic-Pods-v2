@@ -4,6 +4,9 @@ const playHistory = {};
 
 let playerCount = 0;
 
+
+//https://www.reddit.com/r/webdev/comments/1beg7lk/using_localstorage_in_modern_applications_a/
+//best practices for localstorage
 function saveData() {
     localStorage.setItem("players", JSON.stringify(players));
     localStorage.setItem("playHistory", JSON.stringify(playHistory));
