@@ -204,6 +204,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     }
 
     createPlayer(username);
+    document.getElementById("username").value = "";
 });
 
 // Shuffle pods listener
@@ -238,6 +239,13 @@ document.getElementById("resetBtn").addEventListener("click", () => {
         displayPods([]);
     }
 
+});
+
+document.getElementById("username").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        document.getElementById("submitBtn").click();
+        document.getElementById("username").value = "";
+    }
 });
 
 const podSizeSelect = document.getElementById("podSize");
